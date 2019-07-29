@@ -1,4 +1,5 @@
 require 'pry'
+require 'date'
 
 $days_in_month = {
 	"January" =>  31,
@@ -65,8 +66,8 @@ def get_weeks(month)
 	weeks
 end
 
-def print_header(month, year)
-	title = "#{month} #{year}"
+def print_header(day, month, year)
+	title = "#{month} #{day} #{year}"
 
 	weekdays = "Su Mo Tu We Th Fr Sa"
 
@@ -81,14 +82,13 @@ def print_header(month, year)
 end
 
 def print_month
+	day = Date.today.day
+	month = Date::MONTHNAMES[Date.today.month]
+	year = Date.today.year
 
-	month = "August"
-	year = "3022"
-
-	print_header(month, year)
+	print_header(day, month, year)
 	weeks = get_weeks(month)
 	puts weeks.join("\n")
 end
 
 print_month
-#new branch example
