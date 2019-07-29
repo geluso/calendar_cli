@@ -81,8 +81,8 @@ def print_header(month, year)
 end
 
 def print_month
-	month = "August"
-	year = "2022"
+	month = "January"
+	year = "9990"
 
 	print_header(month, year)
 	weeks = get_weeks(month)
